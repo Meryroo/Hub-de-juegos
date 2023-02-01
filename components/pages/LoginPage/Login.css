@@ -1,0 +1,22 @@
+.loginPage{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    padding: 0 6rem;
+    
+}
+.loginPage div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.loginPage h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    
+}

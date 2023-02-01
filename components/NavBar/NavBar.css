@@ -1,0 +1,9 @@
+.themeBtn{
+    width:3rem;
+    height: 3rem;
+    transform: scale(2.5);
+    background: none;
+    border: none;
+    padding-top: 0.5rem;
+}
+
