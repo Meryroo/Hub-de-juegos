@@ -4,6 +4,7 @@ import { printTemplate as HomeTemplate } from './pages/Home/Home';
 import { printTemplate as NavbarTemplate, template } from './components/NavBar/NavBar';
 import { addListenerPoke } from './pages/Home/Home';
 
+
 export const initContent = (route) =>{
     switch (route) {
         case undefined:
@@ -14,21 +15,14 @@ export const initContent = (route) =>{
         case "Home":
             HomeTemplate()
             break;
-            
+            case "pokeApi":
+                addListenerPoke()
+                
+                break;     
     }
 }
 
-export const initHome = (route) => {
-    switch (route) {
-        case "pokeApi":
-            addListenerPoke()
-            
-            break;
-    
-    
-            
-    }
-}
+
 
 initContent()
 NavbarTemplate()
