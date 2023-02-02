@@ -1,8 +1,8 @@
 import './style.css'
-import { printTemplate as loginTemplate } from './components/pages/LoginPage/Login'
-import { printTemplate as HomeTemplate } from './components/pages/Home/Home';
+import { printTemplate as loginTemplate } from './pages/LoginPage/Login';
+import { printTemplate as HomeTemplate } from './pages/Home/Home';
 import { printTemplate as NavbarTemplate, template } from './components/NavBar/NavBar';
-import { addListenerPoke } from './components/pages/Home/Home';
+import { addListenerPoke } from './pages/Home/Home';
 
 export const initContent = (route) =>{
     switch (route) {

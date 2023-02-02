@@ -1,7 +1,6 @@
 import ("./Home.css")
 import { templatePokeApi } from "../POKEAPI/POKEAPI"
 
-
  export const homeTemplate = () =>`
 
 <section>
@@ -23,8 +22,9 @@ export const printTemplate = () =>{
 }
 
 export const addListenerPoke = () => {
-    document.querySelector("#app")
+    const container = document.querySelector("#app")
     document.querySelector("#pokeApiBtn").addEventListener("click", () =>{
-        app.innerHTML = templatePokeApi()
+        container.innerHTML = templatePokeApi()
+    
     })
 }
