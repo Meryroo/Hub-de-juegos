@@ -1,0 +1,23 @@
+.answerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.answerContainer button {
+    background: none;
+    border-radius: 20px;
+    padding: 0.5rem;
+
+}
+.quizContainer{
+    display: flex;
+    gap: 2rem;
+    border: 1px solid black;
+    width: 80vw;
+    margin: 0 auto;
+}
+.quiz{
+    text-align: center;
+}

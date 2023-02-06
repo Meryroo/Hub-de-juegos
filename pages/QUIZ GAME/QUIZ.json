@@ -1,0 +1,48 @@
+{"questions": [{
+    "pregunta": "¿Qué tipos de datos Javascript devuelven valor true o false?",
+    "respuestas": {
+       "uno":{"valor": "Boolean", "correcta": true },
+        "dos": {"valor": "String", "correcta": false },
+        "tres": {"valor": "Array" , "correcta": false},
+        "cuatro": {"valor":"Ninguna es correcta", "correcta": false }
+        
+    }
+},
+{
+    "pregunta": "¿Cuál de estos elementos no es un tipo de bucle?",
+    "respuestas": {
+       "uno":{"valor2": "Fore ach", "correcta": false },
+        "dos": {"valor": "For of", "correcta": false },
+        "tres": {"valor": "Array" , "correcta2": true},
+        "cuatro": {"valor":"Todas son correctas", "correcta": false }
+    }
+},
+
+{
+    "pregunta": "¿Para qué sirve el método push?",
+    "respuestas": {
+       "uno":{"valor": "Para dividir un array en dos", "correcta": false },
+        "dos": {"valor": "Para vaciar todos los elementos de un array", "correcta": false },
+        "tres": {"valor": "Para seleccionar un elemento dentro de un array" , "correcta": true},
+        "cuatro": {"valor":"Para añadir o añadir uno o más elementos al final de un Array", "correcta": true }
+    }
+},
+{
+    "pregunta": "¿Para qué sirve el método push?",
+    "respuestas": {
+       "uno":{"valor": "Para dividir un array en dos", "correcta": false },
+        "dos": {"valor": "Para vaciar todos los elementos de un array", "correcta": false },
+        "tres": {"valor": "Para seleccionar un elemento dentro de un array" , "correcta": true},
+        "cuatro": {"valor":"Para añadir o añadir uno o más elementos al final de un Array", "correcta": true }
+    }
+},
+{
+    "pregunta": "El lenguaje JavaScript nos permite modificar",
+    "respuestas": {
+       "uno":{"valor": "La estructura y contenido de una página web.", "correcta": false },
+        "dos": {"valor": "La presentación de una página web.", "correcta": false },
+        "tres": {"valor": "La estructura, contenido y presentación de una página web" , "correcta": true},
+        "cuatro": {"valor":"Ninguna de las anteriores es correcta.", "correcta": true }}
+    
+
+        }]}

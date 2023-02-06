@@ -1,0 +1,133 @@
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container-general{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+    flex-wrap: wrap;
+    padding: 2rem 6rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding: 4rem;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px;
+     
+}
+.title-general{
+    text-align: center;
+}
+
+.title-general img{
+    width: 500px;
+    margin-bottom: 1.5rem;
+
+}
+.title-container{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+    
+
+
+
+.player1{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: bisque;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.player2{
+    display: flex;
+    background-color: bisque;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+
+.print-container{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.print-container2{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+}
+.piedra{
+    background: none;
+    border: none;
+}
+.papel{
+    background: none;
+    border: none;
+}
+.tijera{
+    background: none;
+    border: none;
+}
+.piedra img{
+    width:55px ;
+    transform: rotateY(180deg);
+    filter:saturate(80%);
+    
+}
+.papel img{
+    width:50px ;
+    
+}
+.tijera img{
+    width:50px ;
+}
+
+.piedra2 img{
+    width:55px ;
+    filter:saturate(80%);
+    
+}
+.papel2 img{
+    width:50px ;
+    transform: rotateY(180deg);
+    
+}
+.tijera2 img{
+    width:50px ;
+    transform: rotateY(180deg);
+}
+.piedra2{
+    background: none;
+    border: none;
+}
+.papel2{
+    background: none;
+    border: none;
+}
+.tijera2{
+    background: none;
+    border: none;
+}

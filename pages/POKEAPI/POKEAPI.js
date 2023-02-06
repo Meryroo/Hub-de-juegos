@@ -1,18 +1,23 @@
 import ("./POKEAPI.css")
+import { printTemplate as HomeTemplate } from "../Home/Home"
+
 let mapCharacters = []
 
-const container = document.querySelector("#container");
+
 const templatePokeApi = () =>
 
 `
+<div class="logo"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675622083/International_Pok%C3%A9mon_logo.svg_cdagwo.png" alt="pokemon Logo"</div>
 <div class="container-poke">
-<div class="inputDiv"><input type="text" id="searchInput" class="input" placeholder="Busca tu pokemon"/></div>
-<nav id="navBar" class="nav"></nav>
-
-<h1>PokeApi</h1>
+<div class="inputDiv">
+    <button class="backBtn" id="backBtn"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675439655/flecha-izquierda_kuak2y.png" alt="back Icon">Back</button>
+    <input type="text" id="searchInput" class="input" placeholder="Pokebúsqueda..."/>
+</div>
+<nav id="navBar" class="nav">
+<button id="all" type="button" class="all" >All</button>
+</nav>
 <section id="gallery" class="gallery">
 </section>
-
 </div>
 `
 
@@ -30,9 +35,6 @@ const getCharacters = async () => {
     mappedCharacters(characters)
 }
 
-
-
-
 const mappedCharacters = () =>{
  mapCharacters =characters.map((character) =>({
     image: character.sprites.other.dream_world.front_default,
@@ -40,8 +42,8 @@ const mappedCharacters = () =>{
     name: character.name,
     height: (character.height)*10,
     weight: (character.weight) /10,
-    type: character.types[0].type.name,
-    type_2: character.types[1]?.type.name,
+    types: character.types
+  
 })) 
 
 printCharacters(mapCharacters)
@@ -54,24 +56,28 @@ const printCharacters = (characters) => {
     gallery.innerHTML = ""
     for (const character of characters){
         const figure = document.createElement("figure");
-        const caraB = document.createElement("figure");
         const carta = document.createElement("div")
+    
         figure.innerHTML = `
-        <h3>${character.id}</h3>
-        <h2>${character.name}</h2>
+        <div class="titleCard">
+        <h3>ID: ${character.id}</h3>
+        <h3 ></h3>${character.name}</h3>
         <img src=${character.image} alt= ${character.name}
-        <h3>${character.height}</h3>
-        <h3>${character.weight}</h3>
-        <h3 class=${character.type}>${character.type}</h3>
-        <h3 class=${character.type_2}>${character.type_2}</h3>
+        <h4 class="footercard"> Altura: ${character.height}cm</h4>
+        <h4 class="footercard">Peso: ${character.weight}kg</h4>
+          
         `
+       for (const tp of character.types){
+        const p = document.createElement("p");
+        p.innerText = tp.type.name;
+        figure.appendChild(p);
+       }
         figure.classList.add("cara")
-       carta.appendChild(figure);
-       carta.appendChild(caraB);
-        caraB.classList.add("caraB");
-        gallery.appendChild(carta)
-        carta.classList.add("cartaBox")
+        gallery.appendChild(figure)
      }
+     
+     
+        
 }
 
 
@@ -79,9 +85,10 @@ export const printTemplate = () => {
     document.querySelector("#app").innerHTML =
     templatePokeApi();
     getCharacters();
-   addListener()
-   getButtons()
- 
+    addListener();
+    getButtons();
+    BtnListener();
+    getCategoryBtns();
     
     }
  
@@ -95,27 +102,81 @@ export const printTemplate = () => {
     } 
    
     const filterCharacters = (characters) => {
-        console.log(searchInput.value)
         const filtered = characters.filter((character) => character.name.toLowerCase().includes(searchInput.value.toLowerCase()))
-        console.log(filtered)
         printCharacters(filtered)
        
     }
 
-    const categorias = ["grass", "poison", "fire", "flying", "water", "bug", "normal", "electric", "ground", "fairy", "fighting", "psychic", "rock", "steel", "ice", "ghost", "dragon"]; 
+    const categorias = ["grass", "poison", "fire", "water", "bug", "normal", "electric", "ground", "fairy", "fighting", "psychic", "rock", "ice", "ghost", "dragon", ]; 
+    
 
    const getButtons = () =>{
     const naveBar = document.querySelector("#navBar")
     for (const type of categorias){
         const categoryBtn = document.createElement("button")
-        categoryBtn.innerText = type
-        categoryBtn.classList.add(type)
+        categoryBtn.classList.add( type)
+       categoryBtn.innerHTML = `${type}`
         naveBar.appendChild(categoryBtn)
-        categoryBtn.addEventListener("click", (ev) =>{
+        categoryBtn.addEventListener("click", () =>{
+            getCategory(mapCharacters, type)
             
         })
-    }
+    } 
    }
 
+  const getCategory = (characters,type, ) => {
+const filterCategory = characters.filter((character) => character.types[0].type.name === type)
+printCharacters(filterCategory)
+  }
 
 
+  const BtnListener = () => {
+    const backBtn = document.querySelector("#backBtn")
+    backBtn.addEventListener("click", () => {
+        HomeTemplate()
+    })
+  }
+  
+  
+const images = {
+    "grass": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440158/grass_tlu0bi.svg",
+    "poison": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440160/poison_hi87h6.svg",
+    "fire": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440158/fire_iqrdi1.svg",
+    "water": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440160/water_ihe2ug.svg",
+    "bug": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440157/bug_yytmdn.svg",
+    "normal": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440159/normal_vxobrr.svg",
+    "electric": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440157/electric_paoyq7.svg",
+    "ground": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440159/ground_dukqhp.svg",
+    "fairy": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440157/fairy_coy3ii.svg",
+    "figthting": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440157/fighting_iffvdk.svg",
+    "psychic": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440160/psychic_tw40y4.svg",
+    "rock": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440160/rock_ti5d3g.svg",
+    "ice": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440159/ice_vey6vh.svg",
+    "ghost": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440158/ghost_j67mib.svg",
+    "dragon": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440157/dragon_jlsvku.svg",
+  
+  }
+  
+  const getCategoryBtns = () => {
+    const categoryBtns = document.querySelectorAll(".categoryBtn")
+   for (const image in images){
+    if (image === categoryBtns.class){
+        categoryBtns.innerHTML(image)
+    }
+
+   }
+    
+  }
+    
+  const regionUrl = "https://pokeapi.co/api/v2/region"
+let regionIndex = 1;
+let regions = []
+const getRegions = async () => {
+    for (let i = 1; i <= 10; i++){
+        const data = await fetch(`${regionUrl}${regionIndex}`)
+        regionIndex++
+        const json = await data.json();
+        regions.push(json);
+    }
+   
+}

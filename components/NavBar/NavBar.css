@@ -7,3 +7,17 @@
     padding-top: 0.5rem;
 }
 
+.logout img{
+    width: 31px;
+    
+
+}
+.logout{
+    background:none;
+    border: none;
+}
+
+.hidden{
+    background-color: black;
+    
+}

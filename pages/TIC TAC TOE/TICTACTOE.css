@@ -1,0 +1,22 @@
+.board{
+    display: grid;
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 120px 120px 120px;
+    border: 10px solid rgb(85, 11, 11);
+    border-radius: 10px;
+    position:static;
+   
+}
+
+.tictac{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.board button{
+    background-color: rgb(250, 218, 225);
+    font-size: 2rem;
+    border-style:dotted;
+    color: black;
+}

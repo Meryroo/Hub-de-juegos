@@ -1,8 +1,11 @@
 import ("./NavBar.css")
+import { printTemplate as loginTemplate } from "../../pages/LoginPage/Login";
 
 
 export const template = () =>`
+<button type="button" class="logout"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675433475/flechas_x5bmcb.png" alt="logout Icon"</button>
 <button type="button" id="themeBtn" class="themeBtn">🎲</button>
+
 `;
 
 
@@ -26,5 +29,25 @@ export const backgroundColor = () => {
  export const printTemplate = () => {
     document.querySelector("header").innerHTML = template();
     backgroundColor()
-
+    addListenerLogout()
+  
 };
+ 
+
+const addListenerLogout = () =>{
+  const header = document.querySelector("header")
+  const logoutBtn = document.querySelector(".logout")
+  logoutBtn.innerHTML = `
+  <img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675433475/flechas_x5bmcb.png" alt="logout Icon">`
+  header.appendChild(logoutBtn) 
+  logoutBtn.addEventListener("click",() =>{
+    localStorage.removeItem("user")
+    loginTemplate()
+
+}
+
+)}
+
+ 
+
+

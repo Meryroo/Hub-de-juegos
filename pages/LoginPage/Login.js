@@ -1,4 +1,6 @@
-import { homeTemplate } from "../Home/Home";
+import { initContent } from "../../main";
+import { printTemplate as printHome } from "../Home/Home";
+
 
 import ("./Login.css")
 
@@ -20,7 +22,8 @@ const loginBtn = document.querySelector("#loginBtn");
 loginBtn.addEventListener("click", () =>{
 localStorage.setItem("user" , userName.value)
 if (localStorage.getItem("user")){
-    document.querySelector("#app").innerHTML = homeTemplate()
+    initContent("Home")
+    
 } })
 
 };
