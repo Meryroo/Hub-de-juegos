@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  
+   
 }
 .logo img{
 width: 300px;;
@@ -18,10 +20,10 @@ width: 300px;;
 
 .container-poke{
     display: flex;
- 
     flex-direction: column;
-  
-    padding: 0 6rem;
+    
+   
+    
 }
 .container-poke div {
     display: flex;
@@ -29,22 +31,29 @@ width: 300px;;
     
 }
 .gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 3rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem
+   
     
     ;
 }
 
 .gallery figure {
+    width: 250px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.3rem;
     border: 1px solid #286EB5;
     border-radius: 12px;    
     padding: 1rem;
+    height: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
 }
 
@@ -56,6 +65,8 @@ width: 300px;;
 .gallery figure img{
  width:85%;
  height: 200px;
+ 
+ 
 
 }
 
@@ -64,9 +75,11 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
-padding-bottom: 2rem;
-gap: 1rem;
-margin-bottom: 2rem;
+padding: 0 4rem;
+gap: 2rem;
+margin-bottom: 4rem;
+
+
 
 }
 
@@ -80,6 +93,10 @@ margin-bottom: 2rem;
     background-color: #FFCC01;
     box-shadow: rgba(17, 17, 26, 0.3) 8px 8px 16px;
 
+}
+
+.nav button:hover{
+    background-color: #f3f0af;
 }
 
 .input {
@@ -101,6 +118,7 @@ margin-bottom: 2rem;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 2rem;
+
 
 }
 .inputDiv button {
@@ -137,4 +155,96 @@ margin-bottom: 2rem;
 .cara{
     background-color: whitesmoke;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.loading{
+    border-radius: 1px solid red;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+
+
+}
+
+.loading-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15rem;
+    
+}
+.loading-icon img{
+    width:50px ;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    animation: spin 1s linear infinite; 
+
+}
+
+
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+ .grass{
+  background-color: rgb(25, 216, 152);
+}
+
+.poison{
+background-color: #d579f4;
+
+}
+.fire {
+    background-color: #f8bd66;
+
+}
+.water{
+    background-color: #5d9ddd;
+}
+.electric{
+   background-color: #f5f174;
+    
+}
+
+.ground{
+    background-color: #e1bd9e;
+    
+}
+
+.fairy{
+    background-color: #f7c8eb;
+}
+
+.fighting{
+   background-color: #9c9fa6;
+}
+
+.psychic{
+    background-color: #ff90b5;
+}
+
+.rock{
+    background-color: #b08e74;
+}
+
+.ice{
+ background-color: #a5caef;
+}
+.ghost{
+    background-color: #d2d2d2;
+}
+.dragon{
+    background-color: #f09d4b;
+}
+
+.bug{
+    background-color: #ccabd7;
+}
+
+.normal{
+    background-color: rgb(246, 238, 238);
 }

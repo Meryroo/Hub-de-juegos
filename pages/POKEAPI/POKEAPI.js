@@ -14,10 +14,14 @@ const templatePokeApi = () =>
     <input type="text" id="searchInput" class="input" placeholder="Pokebúsqueda..."/>
 </div>
 <nav id="navBar" class="nav">
-<button id="all" type="button" class="all" >All</button>
+<button id="allBtn" type="button" class="all" >All</button>
 </nav>
+<div class="loading">
+<div class="loading-icon"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675677998/pokebola_itbggp.png" alt="loading Icon"/></div>
+</div>
 <section id="gallery" class="gallery">
 </section>
+
 </div>
 `
 
@@ -26,13 +30,17 @@ const Url = "https://pokeapi.co/api/v2/pokemon/"
 let index = 1;
 let characters = []
 const getCharacters = async () => {
+    const container = document.querySelector(".loading")
+    container.style.display = "block"
     for (let i = 1; i <= 150; i++){
         const data = await fetch(`${Url}${index}`)
         index++
         const json = await data.json();
         characters.push(json);
+
     }
     mappedCharacters(characters)
+    container.style.display = "none"
 }
 
 const mappedCharacters = () =>{
@@ -52,6 +60,7 @@ printCharacters(mapCharacters)
 
 
 const printCharacters = (characters) => {
+    
     const gallery = document.querySelector("#gallery");
     gallery.innerHTML = ""
     for (const character of characters){
@@ -59,7 +68,6 @@ const printCharacters = (characters) => {
         const carta = document.createElement("div")
     
         figure.innerHTML = `
-        <div class="titleCard">
         <h3>ID: ${character.id}</h3>
         <h3 ></h3>${character.name}</h3>
         <img src=${character.image} alt= ${character.name}
@@ -72,7 +80,7 @@ const printCharacters = (characters) => {
         p.innerText = tp.type.name;
         figure.appendChild(p);
        }
-        figure.classList.add("cara")
+        figure.classList.add(`${character.types[0].type.name}`)
         gallery.appendChild(figure)
      }
      
@@ -88,7 +96,8 @@ export const printTemplate = () => {
     addListener();
     getButtons();
     BtnListener();
-    getCategoryBtns();
+    allCharacters();
+ 
     
     }
  
@@ -137,6 +146,12 @@ printCharacters(filterCategory)
     })
   }
   
+  const allCharacters = () => {
+    const allBtn = document.querySelector("#allBtn")
+    allBtn.addEventListener("click", () =>{
+        getCharacters()
+    })
+  }
   
 const images = {
     "grass": "https://res.cloudinary.com/dnkacmdmh/image/upload/v1675440158/grass_tlu0bi.svg",
@@ -157,26 +172,4 @@ const images = {
   
   }
   
-  const getCategoryBtns = () => {
-    const categoryBtns = document.querySelectorAll(".categoryBtn")
-   for (const image in images){
-    if (image === categoryBtns.class){
-        categoryBtns.innerHTML(image)
-    }
-
-   }
-    
-  }
-    
-  const regionUrl = "https://pokeapi.co/api/v2/region"
-let regionIndex = 1;
-let regions = []
-const getRegions = async () => {
-    for (let i = 1; i <= 10; i++){
-        const data = await fetch(`${regionUrl}${regionIndex}`)
-        regionIndex++
-        const json = await data.json();
-        regions.push(json);
-    }
-   
-}
+  

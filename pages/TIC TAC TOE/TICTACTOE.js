@@ -1,6 +1,9 @@
 import("./TICTACTOE.css");
 
 const template = () => `
+<div class="tictaclogo">
+<img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675713531/tictactoe_v5lmwr.gif" alt="tictactoe Logo"/>
+</div>
 <section class="tictac">
 <div class="board">
 <button id="uno"></button>

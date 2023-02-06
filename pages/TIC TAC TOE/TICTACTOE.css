@@ -10,10 +10,14 @@
 
 .tictac{
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+    justify-content: center;
 
+    gap: 3rem;
+
+}
+.tictaclogo img{
+    width: 350px;
+}
 .board button{
     background-color: rgb(250, 218, 225);
     font-size: 2rem;

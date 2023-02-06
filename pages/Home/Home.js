@@ -5,7 +5,7 @@ import { printTemplate as piedrTemplate } from "../PIEDRA, PAPEL, TIJERA/PIEDRA"
 
  export const homeTemplate = () =>`
 
-<section>
+<section class="sectionhome">
 <h1>Hub de juegos</h1>
 <div class= home>
 <img class="bola" src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675437563/pokemon.png_o6h50v.png" alt="pokeaki" />

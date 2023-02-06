@@ -1,15 +1,19 @@
 import ("./QUIZGAME.css")
+import { printTemplate as HomeTemplate } from "../Home/Home"
 
 const quizTemplate = () =>`
-<h2 class="quiz">Quiz Game</h2>
-<button class="backBtn" id="backBtn"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675439655/flecha-izquierda_kuak2y.png" alt="back Icon">Back</button>
+
+<div class="container-Quiz">
+<div class="btnBack">
+<button class="backBtnQuiz" id="quizbackbtn"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675439655/flecha-izquierda_kuak2y.png" alt="back Icon">Volver</button></div>
 <section class="quizContainer">
-<div id="askContainer"></div>
+<div id="askContainer" class="askContainer"></div>
 <div id="answerContainer" class="answerContainer">
 </div>
-<div>
+<div class="againQuizBtn">
 <button id="again">Volver a jugar</button></>
-</section>`
+</section>
+</div>`
 
 
 
@@ -113,10 +117,20 @@ const getAnswer = (questions) => {
 
  }
 
+ const backBtn = () => {
+    const backBtnQuiz = document.querySelector("#quizbackbtn")
+    console.log(backBtnQuiz)
+    backBtnQuiz.addEventListener("click", () => {
+        HomeTemplate()
+
+    })
+ }
+
  export const printTemplate = () => {
     document.querySelector("#app").innerHTML = 
     quizTemplate ()
     getRandomQuestions ()
+    backBtn();
 
   
 }
