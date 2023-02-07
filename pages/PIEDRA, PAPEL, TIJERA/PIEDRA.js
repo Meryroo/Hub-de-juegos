@@ -137,7 +137,7 @@ const piedraPlayer2 = () => {
         let player2 = []
        const container = document.querySelector(".results")
        container.innerHTML = ""
-       container.innerHTML = `<h3>GANA EL JUGADOR 1</h3>`
+       container.innerHTML = `<h3>GANA EL JUGADOR 2</h3>`
        
     }}
   

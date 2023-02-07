@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 120px 120px 120px;
     grid-template-rows: 120px 120px 120px;
-    border: 10px solid rgb(85, 11, 11);
+    border: 10px solid #ED3E42;
     border-radius: 10px;
     position:static;
    
@@ -11,16 +11,54 @@
 .tictac{
     display: flex;
     justify-content: center;
+    padding-top: 4rem;
+    
 
-    gap: 3rem;
+}
 
+.tictaclogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    
 }
 .tictaclogo img{
-    width: 350px;
+    width: 430px;
+    
+    
+    
 }
 .board button{
-    background-color: rgb(250, 218, 225);
+    background-color:#FFFBDD;
     font-size: 2rem;
     border-style:dotted;
     color: black;
+}
+
+.backBtntic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+   border: none;
+   padding-left: 6rem;
+   gap: 1.5rem;
+   font-size: 20px;
+}
+
+.backBtntic img{
+    width: 30px;
+}
+.inputDivtic button{
+    display: flex;
+    justify-content: centert;
+    align-items: center;
+    
+}
+
+.results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

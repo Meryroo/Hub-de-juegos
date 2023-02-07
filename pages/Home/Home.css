@@ -23,6 +23,8 @@ h1{
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    padding:4rem;
+    
    
 }
 
@@ -43,18 +45,45 @@ h1{
 }
 
 .piedraBtn {
-    width: 200px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .quizBtn{
-width: 200px;
+width: 300px;
 }
 
 .ticBtn{
-width: 200px;
+width: 300px;
+border-radius: 10px;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
 }
 
 .sectionhome h1{
     text-align: center;
+}
+.bola{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.bola:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.ticBtn:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+
+}
+.piedraBtn:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+
+}
+.saludo{
+    text-transform: none;
 }

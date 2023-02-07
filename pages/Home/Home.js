@@ -7,11 +7,11 @@ import { printTemplate as piedrTemplate } from "../PIEDRA, PAPEL, TIJERA/PIEDRA"
 
 <section class="sectionhome">
 <h1>Hub de juegos</h1>
+<h2 class="saludo"></h2>
 <div class= home>
-<img class="bola" src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675437563/pokemon.png_o6h50v.png" alt="pokeaki" />
-<img class="piedraBtn" src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675507689/logo_piedra_papel_f1w8xm.webp" alt="piedra game"/>
-<img class="quizBtn" src ="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675519819/quiz_game_kwizrc.png" alt="Quiz Game"/>
-<img class="ticBtn" src ="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675623058/tictac_dn4tsl.png" alt="TicTacToe Game"
+<img class="piedraBtn" src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675728930/piedra_icono_sc8mar.webp" alt="piedra game"/>
+<img class="bola" src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675729580/pokemon_bg_meqgm9.jpg" alt="pokeaki" />
+<img class="ticBtn" src ="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675729850/tic_ilvhdi.jpg" alt="TicTacToe Game"
 </div>
 </section>
 `
@@ -51,9 +51,14 @@ export const printTemplate = () =>{
     homeTemplate();
     addListenerPoke();
     addListenerPiedra();
-    addListenerQuiz();
     addListenerTic();
+    sayHi();
 }
 
+const sayHi = () => {
+    const user = localStorage.getItem("user")
+    const myh2 = document.querySelector(".saludo")
+    myh2.innerHTML = `Hola ${user}!`
+}
 
 

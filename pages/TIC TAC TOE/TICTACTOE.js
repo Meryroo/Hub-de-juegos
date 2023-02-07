@@ -1,9 +1,15 @@
 import("./TICTACTOE.css");
+import { printTemplate as HomeTemplate } from "../Home/Home";
 
 const template = () => `
+<div class="container-tic">
 <div class="tictaclogo">
 <img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675713531/tictactoe_v5lmwr.gif" alt="tictactoe Logo"/>
 </div>
+<div class="inputDivtiv">
+    <button class="backBtntic" id="backBtntic"><img src="https://res.cloudinary.com/dnkacmdmh/image/upload/v1675439655/flecha-izquierda_kuak2y.png" alt="back Icon">Back</button>
+</div>
+<div class="results"></div>
 <section class="tictac">
 <div class="board">
 <button id="uno"></button>
@@ -16,7 +22,7 @@ const template = () => `
 <button id="ocho"></button>
 <button id="nueve"></button>
 </div>
-<div class="results"></div>
+
 </section>
 `;
 
@@ -41,6 +47,8 @@ const btnListener1 = () => {
     (fila1[0]) = `${btn1.classList}`
     console.log(fila1);
     compare();
+    const control = false;
+   
 
     
   });
@@ -57,6 +65,8 @@ const btnListener2 = () => {
     (fila1[1]) = `${btn2.classList}`
     console.log(fila1)
     compare();
+    const control = false;
+    
    
   });
 };
@@ -71,6 +81,8 @@ const btnListener3 = () => {
     (fila1[2]) = `${btn3.classList}`
     console.log(fila1)
     compare();
+    const control = false;
+    
    
   });
 };
@@ -84,6 +96,8 @@ const btnListener4 = () => {
     (fila2[0]) = `${btn4.classList}`
     console.log(fila2)
     compare();
+    const control = false;
+    
     
   });
 };
@@ -98,6 +112,8 @@ const btnListener5 = () => {
     (fila2[1]) = `${btn5.classList}`
     console.log(fila2)
     compare();
+    const control = false;
+   
     
   });
 };
@@ -111,6 +127,8 @@ const btnListener6 = () => {
     (fila2[2]) = `${btn6.classList}`
     console.log(fila2)
     compare();
+    const control = false;
+   
     
   });
 };
@@ -125,6 +143,8 @@ const btnListener7 = () => {
       (fila3[0]) = `${btn7.classList}`
     console.log(fila3)
     compare();
+    const control = false;
+   
    
     });
   };
@@ -139,6 +159,7 @@ const btnListener7 = () => {
       (fila3[1]) = `${btn8.classList}`
       console.log(fila3)
       compare();
+      const control = false;
       
     });
   };
@@ -152,6 +173,8 @@ const btnListener7 = () => {
       (fila3[2]) = `${btn9.classList}`
       console.log(fila3)
       compare();
+      const control = false;
+      
       
     });
   };
@@ -168,7 +191,10 @@ export const printTemplate = () => {
   btnListener7();
   btnListener8();
   btnListener9();  
- empate();
+  backBtn();
+  
+ 
+ 
   
 
 };
@@ -180,47 +206,48 @@ const compare = () => {
         //horizontales
         if (fila1[0] == fila1[1] && fila1[1]== fila1[2]){
             myContainer.innerHTML = `
-            <h4>¡FELICIDADES! has ganado jugador ${fila1[0] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador ${fila1[0] }</h4>`
         }
         if (fila2[0] == fila2[1] && fila2[1]== fila2[2]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila2[0] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador ${fila2[0] }</h4>`
         }
         if (fila3[0] == fila3[1] && fila3[1]== fila3[2]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila3[0] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador${fila3[0] }</h4>`
             //verticales
         }
         if (fila1[0] == fila2[0] && fila2[0]== fila3[0]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila2[0] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador${fila2[0] }</h4>`
         }
         if (fila1[1] == fila2[1] && fila2[1]== fila3[1]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila2[1] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador${fila2[1] }</h4>`
         }
         if (fila1[2] == fila2[2] && fila2[2]== fila3[2]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila2[2] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador${fila2[2] }</h4>`
         }
         //diagonales
         if (fila1[0] == fila2[1] && fila2[1]== fila3[2]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila2[1] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador${fila2[1] }</h4>`
         }
         if (fila1[2] == fila2[1] && fila2[1]== fila3[0]){
             myContainer.innerHTML = `
-            <h4>Ha ganado el jugador ${fila2[1] }</h4>`
+            <h4>¡FELICIDADES! Has ganado jugador${fila2[1] }</h4>`
         }  
-    }
-    }
-
-    const empate = () => {
+      
         
-        for (let i = 1; i <=9; i++){
-            
-            
-            
-        }
+    }
     }
 
+    const backBtn = () => {
+      const backBtn = document.querySelector("#backBtntic")
+      backBtn.addEventListener("click", () => {
+        HomeTemplate()
+      })
+    }
+
+   

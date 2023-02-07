@@ -4,7 +4,6 @@ import { printTemplate as HomeTemplate } from './pages/Home/Home';
 import { printTemplate as NavBarTemplate } from './components/NavBar/NavBar';
 import { printTemplate as PokeApiTemplate } from './pages/POKEAPI/POKEAPI';
 import { printTemplate as piedraTemplate } from './pages/PIEDRA, PAPEL, TIJERA/PIEDRA';
-import { printTemplate as QuizGameTemplate } from './pages/QUIZ GAME/QUIZGAME';
 import { printTemplate as TicTacTemplate } from './pages/TIC TAC TOE/TICTACTOE';
 
 
@@ -23,9 +22,7 @@ export const initContent = (route) =>{
             
         case "Piedra": piedraTemplate()
         break;  
-        
-        case "QuizGame": QuizGameTemplate()
-        break;   
+          
 
         case "TicTacToe": TicTacTemplate()
         break;       

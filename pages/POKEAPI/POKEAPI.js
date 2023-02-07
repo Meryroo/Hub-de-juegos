@@ -84,7 +84,6 @@ const printCharacters = (characters) => {
         gallery.appendChild(figure)
      }
      
-     
         
 }
 
